@@ -28,8 +28,7 @@ public class DateUtil extends DateUtils {
      */
     public static long getDayEndSec(){
         LocalDateTime midnight = LocalDateTime.now().plusDays(1).withHour(0).withMinute(0).withSecond(0).withNano(0);
-        long seconds = ChronoUnit.SECONDS.between(LocalDateTime.now(),midnight);
-        return seconds;
+        return ChronoUnit.SECONDS.between(LocalDateTime.now(),midnight);
     }
     /**
      * 获取本周还剩多少秒
@@ -37,8 +36,7 @@ public class DateUtil extends DateUtils {
      */
     public static long getWeekEndSec(){
         LocalDateTime midnight = getEndDayOfWeek(LocalDateTime.now()).plusDays(1).withHour(0).withMinute(0).withSecond(0).withNano(0);
-        long seconds = ChronoUnit.SECONDS.between(LocalDateTime.now(),midnight);
-        return seconds;
+        return ChronoUnit.SECONDS.between(LocalDateTime.now(),midnight);
     }
 
     /***
@@ -66,9 +64,8 @@ public class DateUtil extends DateUtils {
      * @return
      */
     public static Long zero(int day) {
-        Long time = System.currentTimeMillis(); // 当前时间的时间戳
-        long zero = time / (1000 * 3600 * 24) * (1000 * 3600 * 24) - TimeZone.getDefault().getRawOffset() - day * (1000 * 3600 * 24);// 今天零点零分零秒的毫秒数
-        return zero;
+        long time = System.currentTimeMillis(); // 当前时间的时间戳
+        return time / (1000 * 3600 * 24) * (1000 * 3600 * 24) - TimeZone.getDefault().getRawOffset() - day * (1000 * 3600 * 24);// 今天零点零分零秒的毫秒数
     }
 
 
