@@ -12,7 +12,7 @@ import java.util.Collections;
 
 /**
  * @Author: zengqb
- * @Description:
+ * @Description: redis锁工具类
  * @Date: Created in 2021/10/11
  * @Modified By:
  */
