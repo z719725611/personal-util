@@ -24,19 +24,22 @@ public class DateUtil extends DateUtils {
 
     /**
      * 获取当天还剩多少秒
+     *
      * @return
      */
-    public static long getDayEndSec(){
+    public static long getDayEndSec() {
         LocalDateTime midnight = LocalDateTime.now().plusDays(1).withHour(0).withMinute(0).withSecond(0).withNano(0);
-        return ChronoUnit.SECONDS.between(LocalDateTime.now(),midnight);
+        return ChronoUnit.SECONDS.between(LocalDateTime.now(), midnight);
     }
+
     /**
      * 获取本周还剩多少秒
+     *
      * @return
      */
-    public static long getWeekEndSec(){
+    public static long getWeekEndSec() {
         LocalDateTime midnight = getEndDayOfWeek(LocalDateTime.now()).plusDays(1).withHour(0).withMinute(0).withSecond(0).withNano(0);
-        return ChronoUnit.SECONDS.between(LocalDateTime.now(),midnight);
+        return ChronoUnit.SECONDS.between(LocalDateTime.now(), midnight);
     }
 
     /***
@@ -50,6 +53,7 @@ public class DateUtil extends DateUtils {
         localDate = localDate.with(fieldIso, 7);
         return localDate.atStartOfDay();
     }
+
     public static long getToday() {
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY, 0);
@@ -61,6 +65,7 @@ public class DateUtil extends DateUtils {
 
     /**
      * 获取指定天数之前的零点零分零秒
+     *
      * @return
      */
     public static Long zero(int day) {
