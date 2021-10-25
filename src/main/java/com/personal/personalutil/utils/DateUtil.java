@@ -66,7 +66,7 @@ public class DateUtil extends DateUtils {
     /**
      * 获取指定天数之前的零点零分零秒
      *
-     * @return
+     * @return 返回时间戳
      */
     public static Long zero(int day) {
         long time = System.currentTimeMillis(); // 当前时间的时间戳
